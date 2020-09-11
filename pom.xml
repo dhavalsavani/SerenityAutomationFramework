@@ -2,15 +2,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.automation</groupId>
-	<artifactId>SerenityProject</artifactId>
+	<groupId>com.automation.learning</groupId>
+	<artifactId>SerenityAutomationFramework</artifactId>
 	<version>1.0.0</version>
 
 	<properties>
-		<serenity.version>2.3.4</serenity.version>
+		<serenity.version>2.1.0</serenity.version>
+		<serenity.emailer.version>2.1.0</serenity.emailer.version>
 		<junit.version>4.13</junit.version>
 		<json.schema.validator>4.3.1</json.schema.validator>
 		<hamcrest.version>2.2</hamcrest.version>
+		<webdriver.manager.version>4.2.0</webdriver.manager.version>
 		<java.version>1.8</java.version>
 		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
 		<maven.failsafe.plugin.version>2.22.2</maven.failsafe.plugin.version>
@@ -74,6 +76,13 @@
 			<artifactId>hamcrest</artifactId>
 			<version>${hamcrest.version}</version>
 		</dependency>
+		
+		<!-- Webdriver Manager dependencies -->
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>${webdriver.manager.version}</version>
+		</dependency>
 
 	</dependencies>
 
@@ -121,7 +130,7 @@
 			<plugin>
 				<groupId>net.serenity-bdd.maven.plugins</groupId>
 				<artifactId>serenity-maven-plugin</artifactId>
-				<version>${serenity.maven.version}</version>
+				<version>${serenity.version}</version>
 				<dependencies>
 					<dependency>
 						<groupId>net.serenity-bdd</groupId>
@@ -131,7 +140,7 @@
 					<dependency>
 						<groupId>net.serenity-bdd</groupId>
 						<artifactId>serenity-emailer</artifactId>
-						<version>${serenity.version}</version>
+						<version>${serenity.emailer.version}</version>
 					</dependency>
 				</dependencies>
 				<configuration>
